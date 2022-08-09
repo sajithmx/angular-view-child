@@ -13,6 +13,7 @@ export class AppComponent {
   @ViewChild('hello') hello2: HelloComponent;
   @ViewChild('hello', { read: ElementRef }) hello3: ElementRef;
   @ViewChild('hello', { read: ViewContainerRef }) hello4: ViewContainerRef;
+  @ViewChild('para' ) para: ElementRef;
 
   constructor(public element: ElementRef) {}
 
@@ -33,6 +34,9 @@ export class AppComponent {
     console.log('ngAfterViewInit hello 3:', (this.hello3.nativeElement as HTMLElement).textContent);
 
     console.log('ngAfterViewInit hello 4:', this.hello4.element.nativeElement);
+    console.log('\n');
+
+    console.log('ngAfterViewInit para:', this.para);
     console.log('\n');
   }
 }
